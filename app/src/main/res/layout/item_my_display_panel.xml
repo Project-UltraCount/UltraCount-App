@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_item_my_display_panel"
+    android:layout_width="wrap_content"
+    android:layout_height="70dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_item_my_display_panel_key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="key"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/colorDarkGrey"
+        android:textSize="@dimen/size_text_small_12sp"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"/>
+
+
+    <TextView
+        android:id="@+id/tv_item_my_display_panel_value"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="value"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/size_text_medium_15sp"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>

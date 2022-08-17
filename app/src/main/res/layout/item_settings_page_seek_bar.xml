@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout android:id="@+id/rl_my_dropdowm_window_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:elevation="1dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <View
+        android:id="@+id/v_settings_page_seek_bar_above"
+        style="@style/HorizontalDivider" />
+
+    <ImageView
+        android:id="@+id/iv_settings_page_seek_bar_img"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="15dp"
+        android:src="@drawable/ic_menu_stat"
+        android:tint="@color/colorMyTheme" />
+
+    <TextView
+        android:id="@+id/tv_settings_page_seek_bar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/v_settings_page_seek_bar_above"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@id/iv_settings_page_seek_bar_img"
+        android:gravity="center_vertical"
+        android:text="Setting"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/size_text_medium_15sp" />
+
+    <TextView
+        android:id="@+id/tv_settings_page_seek_bar_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@id/tv_settings_page_seek_bar_title"
+        android:layout_alignTop="@id/tv_settings_page_seek_bar_title"
+        android:layout_alignBottom="@id/tv_settings_page_seek_bar_title"
+        android:gravity="center"
+        android:layout_marginEnd="10dp"
+
+        android:text="value"/>
+
+    <RelativeLayout
+        android:id="@+id/ll_settings_page_seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:layout_below="@id/tv_settings_page_seek_bar_title"
+        android:layout_alignStart="@id/tv_settings_page_seek_bar_title">
+
+        <TextView
+            android:id="@+id/tv_settings_page_seek_bar_lower_bound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:textSize="@dimen/size_text_small_12sp"
+            android:text="lower" />
+
+        <SeekBar
+            android:id="@+id/sb_settings_page_seek_bar_seek_bar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/tv_settings_page_seek_bar_lower_bound"
+            android:layout_toStartOf="@id/tv_settings_page_seek_bar_upper_bound"
+            android:progressTint="@color/colorMyTheme"/>
+
+        <TextView
+            android:id="@+id/tv_settings_page_seek_bar_upper_bound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="5dp"
+            android:textSize="@dimen/size_text_small_12sp"
+            android:text="upper" />
+
+    </RelativeLayout>
+
+    <View
+        style="@style/HorizontalDivider"
+        android:layout_below="@id/ll_settings_page_seek_bar"/>
+
+</RelativeLayout>

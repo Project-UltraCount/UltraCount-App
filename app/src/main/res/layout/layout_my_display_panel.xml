@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="5dp"
+    app:contentPadding="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_my_display_panel_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:layout_gravity="center"
+            android:text="title"
+            android:textColor="@color/colorMyTheme"
+            android:textSize="@dimen/size_text_huge_20sp" />
+
+        <View
+            android:id="@+id/v_my_display_panel_title_divider"
+            android:layout_width="180dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:layout_marginVertical="5dp"
+            android:background="@color/colorGrey" />
+
+        <TableLayout
+            android:id="@+id/tl_my_display_panel_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@color/colorGrey"
+
+            android:dividerPadding="40dp"
+            android:showDividers="middle"
+            android:stretchColumns="*">
+
+<!--            <TableRow-->
+
+<!--                android:divider="@color/colorGrey"-->
+<!--                android:dividerPadding="15dp"-->
+<!--                android:showDividers="middle"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                >-->
+
+<!--                <include layout="@layout/item_my_display_panel"-->
+<!--                    android:layout_margin="5dp"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--                <include layout="@layout/item_my_display_panel"-->
+<!--                    android:layout_margin="5dp"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--                <include layout="@layout/item_my_display_panel"-->
+<!--                    android:layout_margin="5dp"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--                <include layout="@layout/item_my_display_panel"-->
+<!--                    android:layout_margin="5dp"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--            </TableRow>-->
+
+<!--            <TableRow-->
+<!--                android:divider="@color/colorGrey"-->
+<!--                android:dividerPadding="15dp"-->
+<!--                android:showDividers="middle"-->
+<!--                android:layout_marginTop="5dp">-->
+
+<!--                <include layout="@layout/item_my_display_panel"-->
+<!--                    android:layout_margin="5dp"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--                <TextView-->
+<!--                    android:text="jjuu"-->
+<!--                    android:gravity="center">-->
+
+<!--                <include layout="@layout/item_my_display_panel"-->
+<!--                    android:layout_margin="5dp"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--            </TableRow>-->
+
+        </TableLayout>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

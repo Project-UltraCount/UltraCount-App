@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/iv_ongoing_dot"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:elevation="65dp"
+        android:fitsSystemWindows="true"
+        android:fontFamily="sans-serif-black"
+        android:background="@drawable/ani_ongoing"
+        android:textColor="@color/colorMyTheme"
+        android:layout_gravity="center_vertical"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorRed"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:layout_marginLeft="5dp"
+        android:text="@string/sp_ongoing"
+        android:textSize="@dimen/size_text_medium_15sp"
+        android:textStyle="bold"/>
+
+</LinearLayout>

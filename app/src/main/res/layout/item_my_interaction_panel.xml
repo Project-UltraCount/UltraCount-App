@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageButton
+        android:id="@+id/ib_my_interaction_panel_item"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_start"
+        android:background="@color/colorTransparent"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center"/>
+    <TextView
+        android:id="@+id/tv_my_interaction_panel_item"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="action"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textColor="@color/colorMyThemeDark"
+        android:textStyle="bold"
+        android:textSize="@dimen/size_text_medium_15sp"/>
+
+</LinearLayout>

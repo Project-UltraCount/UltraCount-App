@@ -1,0 +1,161 @@
+<resources>
+    <string name="app_name" translatable="false">UltraCount</string>
+    <string name="short_app_name" translatable="false">UltraCount</string>
+
+    <string name="nonsense" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget sodales diam, non facilisis nibh. Morbi vehicula venenatis nulla. Fusce finibus pretium imperdiet. Nunc venenatis a ante at feugiat. Morbi pretium nunc nibh, id auctor ipsum tincidunt non. Nullam tortor mauris, mattis vel nisi vel, suscipit accumsan justo. Praesent elementum dui justo, nec molestie lorem hendrerit quis. Etiam mollis ipsum et justo tincidunt, ut efficitur leo rhoncus. Curabitur sit amet lectus at velit mattis fermentum eu a nulla. Ut faucibus lacus in justo efficitur accumsan. Nulla facilisi. Proin pretium quis arcu nec dapibus. In eros tellus, tincidunt et tellus ut, cursus maximus augue. Sed tempor viverra ipsum ut ornare. Etiam commodo neque pharetra nibh venenatis vestibulum tristique at urna.Nullam vitae ex dictum, dictum lectus ut, faucibus mi. Integer a elit a nulla suscipit facilisis. Praesent blandit ante non fermentum faucibus. Fusce id sodales urna. Vivamus tempus faucibus lacinia. Donec at lobortis erat. Phasellus condimentum pharetra lacinia. Fusce eget consectetur odio. Praesent ut mattis ante. Maecenas imperdiet lectus in risus pellentesque, sed congue elit faucibus. Curabitur at dolor non tellus gravida scelerisque. Maecenas nec mi sit amet turpis blandit lobortis finibus quis metus.Aliquam dapibus lorem non nulla vulputate faucibus. Curabitur condimentum nulla nisi, quis fringilla libero iaculis non. Nullam laoreet ante id lectus blandit, blandit feugiat sapien pellentesque. Etiam nisl massa, aliquam ut dui consequat, elementum dictum arcu. Proin consectetur mauris non nisi interdum iaculis. Suspendisse molestie at metus a semper. Quisque hendrerit, erat nec rhoncus sagittis, ipsum lacus feugiat est, quis ultrices lacus dolor eu neque.Ut laoreet, orci et sagittis imperdiet, turpis dui varius turpis, et hendrerit leo nunc vel eros. Etiam odio enim, rhoncus at vehicula nec, iaculis vel eros. Morbi posuere fringilla luctus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas elit odio, sollicitudin pulvinar nisi quis, viverra blandit quam. Integer rutrum odio a felis malesuada interdum. Aliquam tincidunt posuere risus non eleifend. Morbi laoreet ligula aliquam elit rhoncus, eget euismod erat sollicitudin. Ut nunc arcu, sagittis quis pellentesque et, porta sit amet dui. Fusce nec fermentum ante. Donec lorem lacus, tincidunt et leo sit amet, luctus maximus lectus. Ut ultrices elementum ipsum, eget vulputate neque sollicitudin ut. Nullam vitae nisi non elit placerat tempus. Cras sodales diam urna, et egestas elit placerat vitae.Quisque vestibulum orci in est volutpat auctor a nec nisi. Integer commodo neque nec nulla pharetra dignissim. Proin bibendum felis purus, sit amet suscipit velit blandit ac. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam et velit luctus ex malesuada sollicitudin ac in neque. Praesent urna ex, luctus id porttitor vitae, condimentum vitae metus. Praesent ornare diam eu lectus varius, non semper erat lobortis. Donec elementum, nibh vel vestibulum suscipit, erat risus maximus eros, id tincidunt neque ex vel odio. Nulla sed placerat velit. Aenean lacus orci, finibus eget nisl ut, volutpat porta tortor. Mauris mollis semper enim, convallis tempus diam fermentum ullamcorper.</string>
+
+    <!--    login activity-->
+    <string name="login_username">username</string>
+    <string name="login_password">password</string>
+    <string name="login_button">log in</string>
+    <string name="login_subtitle" translatable="false">built by a group of JC students \npassionate in engineering</string>
+    <string name="login_bg_credit" translatable="false">image credit: www.mobilesmspk.net</string>
+
+    <string name="login_failed">Login failed. Please retry:)</string>
+
+    <string name="failed">failed</string>
+    <!--    event list activity-->
+    <string name="events_heading">events</string>
+    <string name="ongoing_events">ongoing</string>
+    <string name="finished_events">finished</string>
+
+    <!--notification channel info-->
+    <string name="channel_id" translatable="false">UltraCount</string>
+    <string name="channel_name" translatable="false">UltraCount</string>
+    <string name="channel_description" translatable="false">Notification channel of UltraCount</string>
+
+    <!--Toast prompts-->
+    <string name="reconnect_prompt">connection lost. Reconnecting..</string>
+    <string name="failed_to_reconnect_prompt">failed: cannot re-establish connection</string>
+    <string name="no_data_on_server_prompt">no data currently on server</string>
+    <string name="failed_to_fetch_data_prompt">failed to fetch data</string>
+    <string name="malformed_file_prompt">file retrieved is malformed</string>
+    <string name="data_fetch_successful_prompt">fetch data successfully</string>
+    <string name="save_to_gallery_successful_prompt">saved to gallery</string>
+    <string name="failed_to_save_to_gallery_prompt">failed to save to gallery</string>
+    <string name="disconnected_prompt">disconnected from server</string>
+    <string name="set_to_future_forbidden_prompt">cannot set to a future time</string>
+
+    <!-- preferences-->
+    <string name="user_prefs" translatable="false">user_prefs</string>
+    <string name="sp_last_refresh" translatable="false">lastRefresh</string>
+    <string name="sp_ongoing" translatable="false">ongoing</string>
+    <string name="sp_auto_refresh" translatable="false">autoRefresh</string>
+    <string name="sp_refresh_frequency" translatable="false">refreshFrequency</string>
+    <string name="sp_charts_interval" translatable="false">chartsInterval</string>
+    <string name="sp_notification" translatable="false">notification</string>
+    <string name="sp_notify_if_offline" translatable="false">notifyIfOffline</string>
+    <string name="sp_offline_period" translatable="false">offlinePeriod</string>
+    <string name="sp_remember" translatable="false">remember</string>
+
+    <string name="status_prefs" translatable="false">status</string>
+    <string name="sp_start_time" translatable="false">startTime</string>
+
+    <string name="device_prefs" translatable="false">device</string>
+
+    <string name="ftp_info_prefs" translatable="false">ftpInfo</string>
+    <string name="sp_server" translatable="false">server</string>
+    <string name="sp_port" translatable="false">port</string>
+    <string name="sp_username" translatable="false">username</string>
+    <string name="sp_password" translatable="false">password</string>
+
+    <string name="user_info_prefs" translatable="false">userInfo</string>
+
+    <string name="event_manager_prefs" translatable="false">eventManager</string>
+    <!--Tab titles-->
+    <string name="tab_aggregate">aggregate</string>
+
+    <!--Charts titles-->
+    <string name="chart_total_present">total guests present</string>
+    <string name="chart_guest_flow">guest flow</string>
+    <string name="chart_device_count">total count by device</string>
+
+    <!--Entry titles-->
+    <string name="id">id</string>
+    <string name="last_update">last update</string>
+    <string name="total_count">total count</string>
+    <string name="position">position</string>
+    <string name="start_time">start time</string>
+    <string name="last_refresh">last refresh</string>
+    <string name="guests_present">guests present</string>
+    <string name="guests_left">guests left</string>
+    <string name="guests_arrived">guests arrived</string>
+
+    <string name="inflow">inflow</string>
+    <string name="outflow">outflow</string>
+    <string name="netflow">netflow</string>
+
+    <!--Dialog texts-->
+    <string name="change_position">Change position</string>
+    <string name="change_position_msg">"Are you sure to change the position of %s to %s?"</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">OK</string>
+
+    <string name="alert">Alert</string>
+    <string name="stop_counting_msg">Are you sure to stop counting?</string>
+
+    <string name="log_off_msg">Are you sure to log off?</string>
+
+    <!--Notification-->
+    <string name="device_offline">Device seems to have been offline</string>
+
+    <!--setting texts-->
+    <string name="notification">notification</string>
+    <string name="enable_notification">Enable count notification</string>
+    <string name="refresh">refresh</string>
+    <string name="enable_auto_refresh">Enable auto refresh</string>
+    <string name="auto_refresh_frequency">Auto refresh frequency</string>
+    <string name="chart_time_axis_interval">Chart time axis interval</string>
+
+    <string name="events">events</string>
+    <string name="charts">charts</string>
+    <string name="devices">devices</string>
+    <string name="device">Device</string>
+    <string name="stats">statistics</string>
+    <string name="setting">settings</string>
+
+    <string name="entrance">entrance</string>
+    <string name="exit">exit</string>
+    <string name="start">Start</string>
+    <string name="stop">stop</string>
+    <string name="count">count</string>
+    <string name="time">time</string>
+
+    <string name="remember_login_details">remember login details</string>
+    <!--server info-->
+    <string name="server_name" translatable="false">www.projectireye.com</string>
+    <integer name="port_number">21</integer>
+
+    <string name="summary">summary</string>
+
+    <!--    device properties-->
+    <string name="ip_address">IP address</string>
+
+    <string name="event_id">event ID</string>
+
+    <string name="online_status">online status</string>
+    <string name="online">online</string>
+    <string name="offline">offline</string>
+
+
+    <string name="running_status">running status</string>
+    <string name="activated">activated</string>
+    <string name="deactivated">deactivated</string>
+
+    <string name="inflow_outflow_status">counting</string>
+    <string name="couting_inflow">inflow</string>
+    <string name="couting_outflow">outflow</string>
+    <string name="couting_inflow_outflow">inflow &amp; outflow</string>
+
+    <string name="oss_connection_status">OSS</string>
+    <string name="oss_connected">connected</string>
+    <string name="oss_disconnected">disconnected</string>
+
+    <string name="alert_deactivate_device">Are you sure to deactivate device "%1$s"?</string>
+    <string name="alert_activate_device">Are you sure to activate device "%1$s"?</string>
+    <string name="create_new_event">new event</string>
+    <string name="event_name">event name</string>
+    <string name="choose_devices">choose devices</string>
+    <string name="alert_new_event">Confirm start event \"%1$s\" with devices %2$s?</string>
+    <string name="alert_stop_event">Are you sure you want to stop this event? This action cannot be undone!</string>
+</resources>

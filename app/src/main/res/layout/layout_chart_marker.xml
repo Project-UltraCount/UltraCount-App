@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:background="@drawable/ic_bubble"
+    android:backgroundTintMode="src_in">
+
+
+    <TextView
+        android:id="@+id/tv_chart_marker_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/time"
+        android:textSize="6sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_chart_marker_time_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="22:22:22\n3"
+        android:textColor="@color/colorMyTheme"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_chart_marker_count"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_chart_marker_time" />
+
+    <TextView
+        android:id="@+id/tv_chart_marker_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/count"
+        android:textSize="6sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_chart_marker_time_data"/>
+
+    <TextView
+        android:id="@+id/tv_chart_marker_count_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="44"
+        android:textColor="@color/colorMyTheme"
+        android:textSize="10sp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_chart_marker_count" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

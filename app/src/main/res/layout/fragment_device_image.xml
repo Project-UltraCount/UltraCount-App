@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="220dp"
+    android:layout_height="220dp"
+    android:padding="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.deviceviewer.DeviceImageFragment">
+
+    <ImageView
+        android:id="@+id/iv_device_image_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_ultracount_2_offline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_device_image_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="deviceId"
+        android:textColor="@color/colorDarkGrey"
+        android:textSize="@dimen/size_text_small_12sp"
+
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_device_image_bg"
+        app:layout_constraintEnd_toEndOf="@id/iv_device_image_bg"
+        app:layout_constraintHorizontal_bias="0.080"
+
+        app:layout_constraintStart_toStartOf="@id/iv_device_image_bg"
+        app:layout_constraintTop_toTopOf="@id/iv_device_image_bg"
+        app:layout_constraintVertical_bias="0.385" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
