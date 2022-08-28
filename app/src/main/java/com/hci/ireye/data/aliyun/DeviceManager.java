@@ -203,7 +203,7 @@ public class DeviceManager implements Serializable {
                     eventId = propertyValue.getAsString();
                 } else if (propertyName.equals("InflowOutflowStatus")) {
                     inflowOutflowStatus = propertyValue.getAsInt();
-                } else if (propertyName.equals("OssConnectionStatus")) {
+                } else if (propertyName.equals("OssConnectionState")) {
                     ossConnectionState = propertyValue.getAsInt();
                 }
             }

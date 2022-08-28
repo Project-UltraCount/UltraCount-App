@@ -72,7 +72,7 @@ public class EventStatsFragment extends Fragment {
                 .appendEntry(getString(R.string.guests_present), "N/A")
                 .appendEntry(getString(R.string.guests_arrived), "N/A")
                 .appendEntry(getString(R.string.guests_left), "N/A")
-                .appendEntry(getString(R.string.start_time), SimpleDateFormat.getDateTimeInstance().format(new Date(mEvent.getStartTime() * 1000L)).replace(' ', '\n'));
+                .appendEntry(getString(R.string.start_time), SimpleDateFormat.getDateTimeInstance().format(new Date(mEvent.getStartTime() * 1000L)));
 
         for (String deviceId : mEvent.getDeviceIds()) {
             MyDisplayPanel newDisplayPanel = new MyDisplayPanel(mContext);
