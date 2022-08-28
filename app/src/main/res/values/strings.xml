@@ -8,7 +8,7 @@
     <string name="login_username">username</string>
     <string name="login_password">password</string>
     <string name="login_button">log in</string>
-    <string name="login_subtitle" translatable="false">built by a group of JC students \npassionate in engineering</string>
+    <string name="login_subtitle" translatable="false">built by a group of Hwa Chong students \npassionate in engineering</string>
     <string name="login_bg_credit" translatable="false">image credit: www.mobilesmspk.net</string>
 
     <string name="login_failed">Login failed. Please retry:)</string>
