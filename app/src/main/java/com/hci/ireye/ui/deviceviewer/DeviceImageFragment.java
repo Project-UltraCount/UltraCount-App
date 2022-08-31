@@ -66,6 +66,7 @@ public class DeviceImageFragment extends Fragment {
 
         mTvId.setText(mDevice.getDeviceId());
 
+        Log.d("屮", "update: 1");
         update();
     }
 
@@ -75,6 +76,7 @@ public class DeviceImageFragment extends Fragment {
 
     public void update() {
         ThreadUtil.runOnThread(()->{
+            if (mDevice == null) return;
             mDevice.fetchOnlineStatus();
             ThreadUtil.runOnUIThread(()-> {
                 if (!mDevice.isOnline()) {

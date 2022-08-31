@@ -43,6 +43,7 @@ public class DeviceManager implements Serializable {
             // success
             Gson gson = new GsonBuilder().create();
             JsonObject json = gson.fromJson(response.body().string(), JsonObject.class);
+            Log.d("曹操", "getAllCountingDevices: "+json);
             JsonArray devicesInfo = json.getAsJsonObject("Data").getAsJsonArray("DeviceInfo");
 
             for (JsonElement x : devicesInfo) {

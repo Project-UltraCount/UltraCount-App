@@ -21,6 +21,7 @@ import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.hci.ireye.R;
 import com.hci.ireye.data.util.ThreadUtil;
+import com.hci.ireye.ui.util.MyUtil;
 import com.hci.ireye.ui.util.ToastUtil;
 
 import java.io.BufferedReader;
@@ -317,7 +318,7 @@ public class EventsManager {
         }
 
 
-        public CountingDeviceData getCountingAggregateData() {
+        public CountingDeviceData getCountingAggregateData(long intervalMilli, long startTime) {
             if (timeInterval == null) throw new RuntimeException("this device data is not uniform! Call its toUniformCountingDeviceDataSet() first.");
 
             TreeMap<Long, Integer> aggregateInflow = new TreeMap<>();
@@ -328,6 +329,7 @@ public class EventsManager {
                     for (Map.Entry<Long, Integer> entry : deviceData.inflow.entrySet()) {
                         Long time = entry.getKey();
                         Integer count = entry.getValue();
+                        time = MyUtil.getStartOfInterval(time, startTime, intervalMilli / 1000);
                         aggregateInflow.merge(time, count, Integer::sum);
                     }
                 }
@@ -335,6 +337,7 @@ public class EventsManager {
                     for (Map.Entry<Long, Integer> entry : deviceData.outflow.entrySet()) {
                         Long time = entry.getKey();
                         Integer count = entry.getValue();
+                        time = MyUtil.getStartOfInterval(time, startTime, intervalMilli / 1000);
                         aggregateOutflow.merge(time, count, Integer::sum);
                     }
                 }

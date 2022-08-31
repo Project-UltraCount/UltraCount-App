@@ -206,6 +206,7 @@ public class DeviceViewerFragment extends Fragment {
     private void updateDeviceSelector() {
         ThreadUtil.runOnThread(() -> {
             ArrayList<DeviceManager.CountingDevice> devices = mDeviceManager.getAllCountingDevices();
+            Log.d("屮", devices.toString());
             ThreadUtil.runOnUIThread(() -> {
                 // initialise device selector;
                 // never removes any fragment because 1. device removal is very unlikely 2.ViewPager has bugs in removing fragments
@@ -213,6 +214,7 @@ public class DeviceViewerFragment extends Fragment {
                     if (!mViewPagerAdapter.hasFragment(device.getDeviceId())) {
                         mViewPagerAdapter.addFragment(device.getDeviceId(), DeviceImageFragment.newInstance(device));
                     } else {
+                        Log.d("屮", "2");
                         ((DeviceImageFragment)mViewPagerAdapter.getFragment(device.getDeviceId())).update();
                     }
 

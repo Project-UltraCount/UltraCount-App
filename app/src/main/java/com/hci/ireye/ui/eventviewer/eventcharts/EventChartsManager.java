@@ -8,6 +8,7 @@ import static com.hci.ireye.ui.util.MyUtil.compressTimeInSeconds;
 import static com.hci.ireye.ui.util.MyUtil.extractTimeInSeconds;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.github.mikephil.charting.charts.LineChart;
@@ -36,6 +37,7 @@ class EventChartsManager {
     private TreeMap<String, LineChart> mDeviceLineCharts = new TreeMap<>();
 
     private static final long TIME_OFFSET = System.currentTimeMillis() / 1000;
+    private SharedPreferences mUserPrefs;
 
     public static EventChartsManager getInstance(Context context) {
         if (instance == null) instance = new EventChartsManager(context);
@@ -44,6 +46,7 @@ class EventChartsManager {
 
     private EventChartsManager(Context context) {
         mContext = context;
+        mUserPrefs = mContext.getSharedPreferences(mContext.getString(R.string.user_prefs), Context.MODE_PRIVATE);
     }
 
     private final ValueFormatter mXAxisTimeFormatter = new ValueFormatter() {
@@ -66,7 +69,7 @@ class EventChartsManager {
 
     public void update(EventsManager.CountingDataSet dataSet) {
         Log.d("我", "dataset1 = " + dataSet);
-        updateAggregateLineChart(dataSet.getCountingAggregateData());
+        updateAggregateLineChart(dataSet.getCountingAggregateData(mUserPrefs.getLong(mContext.getString(R.string.sp_charts_interval), 60000), TIME_OFFSET));
         Log.d("我", "update: all device ids" + dataSet.getDeviceIds());
         for (String deviceId : dataSet.getDeviceIds()) {
             updateDeviceLineChart(dataSet.getCountingDeviceData(deviceId));

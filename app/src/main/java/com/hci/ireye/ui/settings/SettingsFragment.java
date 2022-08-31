@@ -125,7 +125,7 @@ public class SettingsFragment extends Fragment {
                         getString(R.string.chart_time_axis_interval),
                         formatDurationString(Duration.ofMillis(CHARTS_INTERVAL_LOWER)),
                         formatDurationString(Duration.ofMillis(CHARTS_INTERVAL_UPPER)),
-                        getPercentage(CHARTS_INTERVAL_LOWER, CHARTS_INTERVAL_UPPER, mUserPrefs.getLong(getString(R.string.sp_charts_interval), 20000)),
+                        getPercentage(CHARTS_INTERVAL_LOWER, CHARTS_INTERVAL_UPPER, mUserPrefs.getLong(getString(R.string.sp_charts_interval), 60000)),
                         new SeekBar.OnSeekBarChangeListener() {
                             @Override
                             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
