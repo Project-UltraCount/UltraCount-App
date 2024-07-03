@@ -1,7 +1,11 @@
+<div align="center">
+<img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZXHeCXMa1yxSLgbDliJsMKSWv8MLf8mYok-g1r9zyJXBlb_aHXvVn1KgZppzrv_qSFZbhu5P92Th19BJ0Hx8SILFriTy-Ih38=w1195-h1347" width=100/>
+
 # Project UltraCount
 **(formerly named Project IREye)**
+</div>
 
-<span><p style="color: red;">_**This is code for the software.**_</p></span>
+<span><p style="color: red;">_**This is code for the software Android application.**_</p></span>
 
 ## Overview
 During the COVID-19 period, we, an engineering team of six under the Hwa Chong Entrepreneurship Programme, initiated a pedestrian counter project aimed at reinforcing our school's security management. Using ultrasonic sensors, we designed a mobile application to communicate in real-time, providing data about the number of students inside the campus for use by security personnel.
@@ -54,7 +58,7 @@ Our project was successfully completed and has been regularly used by the school
 - **Cloud Service**: Aliyun Object Storage Service
 
 ## Contact
-For more information, please contact [hl653@cam.ac.uk].
+For more information, please contact <a href="mailto:hl653@cam.ac.uk">Hongyi Lin</a> or <a href="mailto:e1155799@u.nus.edu">Zhu Tianyi</a>.
 
 ---
 
