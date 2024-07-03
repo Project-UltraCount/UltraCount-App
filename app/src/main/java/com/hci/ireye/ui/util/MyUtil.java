@@ -54,6 +54,7 @@ public class MyUtil {
     static public <K, V> V getValue(Map<K, V> map, int index) {
         V[] values = (V[])map.values().toArray();
         if (index < 0) index += map.size();
+        if (index >= map.size()) return null;
         return values[index];
     }
 
