@@ -24,7 +24,7 @@ In this collaborative effort, our contributions included:
 - **Ultrasonic Counter Programming**: Developing the counter logic using Python.
 - **Android Application Development**: Programming the application to display real-time figures using Java and establishing data transmission using the Object Storage Service by Aliyun as our cloud server.
 - **IoT Functionality**: Integrating IoT functionalities using API protocols.
-- **Remote Control Implementation**: Realizing hardware remote control on the Android app using the Aliyun IoT platform based on MQTT protocols and programming message transmission between the broker and the hardware client.
+- **Remote Control Implementation**: Realizing hardware remote control on the Android app using the Aliyun IoT platform based on MQTT protocols and message transmission between the broker and the hardware client.
 
 ## Project Development
 1. **Design and Prototyping**:
@@ -54,7 +54,7 @@ Our project was successfully completed and has been regularly used by the school
 ## Technologies Used
 - **Hardware**: Raspberry Pi, Ultrasonic Sensors
 - **Software**: Python, Java, Android SDK
-- **Protocols**: API for IoT integration, MQTT
+- **Protocols**: MQTT Protocol for Aliyun IoT Platform
 - **Cloud Service**: Aliyun Object Storage Service
 
 ## Contact
