@@ -39,8 +39,7 @@ public class EventChartsFragment extends Fragment {
     private SharedPreferences mUserPrefs, mDevicePrefs;
 
     private EventChartsManager eventChartsManager;
-    private static long lineChartInterval;
-//    private static long barChartInterval;
+    //    private static long barChartInterval;
 
     private EventsManager.CountingEvent mEvent; // the event whose data is to be displayed
 
@@ -85,7 +84,7 @@ public class EventChartsFragment extends Fragment {
 
         List<String> deviceIds = mEvent.getDeviceIds();
         // add device charts
-        int rowCount = (int) Math.ceil(deviceIds.size() / 2d);
+        int rowCount = (int) Math.ceil(deviceIds.size() / (double)COLUMN_COUNT);
 
         for (int row = 0; row < rowCount; row++) {
             TableRow tableRow = new TableRow(mContext);
@@ -122,9 +121,9 @@ public class EventChartsFragment extends Fragment {
         if (mContext == null) mContext = getContext();
 
         //update from preference (they may have changed)
-        lineChartInterval = 20;//mUserPrefs.getLong(mContext.getString(R.string.sp_charts_interval), 20);
+        long lineChartInterval = mUserPrefs.getLong(mContext.getString(R.string.sp_charts_interval), 60000) / 1000;
 
-        EventsManager.CountingDataSet newDataSet = dataSet.toUniformCountingDataSet(lineChartInterval, true);
+        EventsManager.CountingDataSet newDataSet = dataSet.toUniformCountingDataSet(EventChartsManager.TIME_OFFSET, lineChartInterval, true);
         Log.d("我", "update: newdataset " + newDataSet);
         Log.d("我", "update: dataset" + dataSet);
         eventChartsManager.update(newDataSet);

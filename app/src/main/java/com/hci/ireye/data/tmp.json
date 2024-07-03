@@ -1,0 +1,13 @@
+{
+  "RequestId": "F7912DBE-7A2E-55F6-A30E-3A4F067D364D",
+  "AssumedRoleUser": {
+    "Arn": "acs:ram::1394721840664016:role/ramosstest/SessionTest",
+    "AssumedRoleId": "399190533233866520:SessionTest"
+  },
+  "Credentials": {
+    "SecurityToken": "CAIS9AF1q6Ft5B2yfSjIr5DFf+Lmq7ZG5IiPc0uI1TMMOr1Vm/DBszz2IHFFfXhoBOsdtP80lG5W6/walqJIRoReREvCUcZr8szHXcwkm9KT1fau5Jko1beHewHKeTOZsebWZ+LmNqC/Ht6md1HDkAJq3LL+bk/Mdle5MJqP+/UFB5ZtKWveVzddA8pMLQZPsdITMWCrVcygKRn3mGHdfiEK00he8TokuPjgmJTMtkKA0gGik7Evyt6vcsT+Xa5FJ4xiVtq55utye5fa3TRYgxowr/Yn1f0cpGyc5IrGUwcPvk/eKYjO+9hoNxRla7MmCxa3Ok5LcigSGoABEPXhfZwDisOv4XsE76Vi3KeSBonVOslaK0fLa97bUXsURsZWkQ1WSQdkhSr6EgJCynC5rTssu94evFUC7w7m5aMDJUQaXeIlA748C1LcmckV82hHN6eSEejjV3AVtGKTrKUgjBlXCVFlyarmCY90NF5gzBO4y4JThvaQZTLGXn4=",
+    "AccessKeyId": "STS.NSp4XRFigSJdqm913Y62yt5jQ",
+    "AccessKeySecret": "CC8cRGkrWv9UkQxwDPkZqg88yZpryRCHfgWGrHRZG3hV",
+    "Expiration": "2022-05-29T02:34:06Z"
+  }
+}

@@ -36,7 +36,7 @@ class EventChartsManager {
 
     private TreeMap<String, LineChart> mDeviceLineCharts = new TreeMap<>();
 
-    private static final long TIME_OFFSET = System.currentTimeMillis() / 1000;
+    public static final long TIME_OFFSET = System.currentTimeMillis() / 1000;
     private SharedPreferences mUserPrefs;
 
     public static EventChartsManager getInstance(Context context) {
@@ -69,7 +69,7 @@ class EventChartsManager {
 
     public void update(EventsManager.CountingDataSet dataSet) {
         Log.d("我", "dataset1 = " + dataSet);
-        updateAggregateLineChart(dataSet.getCountingAggregateData(mUserPrefs.getLong(mContext.getString(R.string.sp_charts_interval), 60000), TIME_OFFSET));
+        updateAggregateLineChart(dataSet.getCountingAggregateData());
         Log.d("我", "update: all device ids" + dataSet.getDeviceIds());
         for (String deviceId : dataSet.getDeviceIds()) {
             updateDeviceLineChart(dataSet.getCountingDeviceData(deviceId));

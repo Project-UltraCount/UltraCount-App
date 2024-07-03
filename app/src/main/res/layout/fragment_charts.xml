@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+
+    <com.hci.ireye.ui.customview.SubPage
+        android:id="@+id/rv_charts_page"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"/>
+
+    <View
+        android:layout_height="1dp"
+        android:layout_width="300dp"
+        android:background="@color/colorGrey"
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="bottom line"
+        android:layout_gravity="center"
+        android:textSize="@dimen/size_text_small_12sp"
+        android:textColor="@color/colorGrey" />
+</LinearLayout>

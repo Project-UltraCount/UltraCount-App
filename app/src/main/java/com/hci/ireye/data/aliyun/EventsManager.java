@@ -306,19 +306,46 @@ public class EventsManager {
             return eventId;
         }
 
-        public CountingDeviceData getCountingDeviceData(String deviceId, long timeInterval, boolean isCumulative) {
-            return dataset.get(deviceId).toUniformCountingDeviceData(timeInterval, isCumulative);
+        public CountingDeviceData getCountingDeviceData(String deviceId, long startTime, long timeInterval, boolean isCumulative) {
+            return dataset.get(deviceId).toUniformCountingDeviceData(startTime, timeInterval, isCumulative);
         }
 
         public CountingDeviceData getCountingDeviceData(String deviceId) {
             if (timeInterval == null) {
                 throw new RuntimeException("non-uniform device data is not exposed for use.");
             }
-            return dataset.get(deviceId);
+
+            CountingDeviceData data = dataset.get(deviceId);
+            TreeMap<Long, Integer> in = new TreeMap<>();
+            TreeMap<Long, Integer> out = new TreeMap<>();
+            if (isCumulative && data.inflow != null) {
+                int cumulativeCount = 0;
+                for (Map.Entry<Long, Integer> entry : data.inflow.entrySet()) {
+                    long time = entry.getKey();
+                    int count = entry.getValue();
+                    cumulativeCount += count;
+                    in.put(time, cumulativeCount);
+                }
+            }
+            if (isCumulative && data.outflow != null) {
+                int cumulativeCount = 0;
+                for (Map.Entry<Long, Integer> entry : data.outflow.entrySet()) {
+                    long time = entry.getKey();
+                    int count = entry.getValue();
+                    cumulativeCount += count;
+                    out.put(time, cumulativeCount);
+                }
+            }
+            return new CountingDeviceData(
+                    data.deviceId,
+                    data.timeInterval,
+                    data.isCumulative,
+                    in,
+                    out);
         }
 
 
-        public CountingDeviceData getCountingAggregateData(long intervalMilli, long startTime) {
+        public CountingDeviceData getCountingAggregateData() {
             if (timeInterval == null) throw new RuntimeException("this device data is not uniform! Call its toUniformCountingDeviceDataSet() first.");
 
             TreeMap<Long, Integer> aggregateInflow = new TreeMap<>();
@@ -329,7 +356,6 @@ public class EventsManager {
                     for (Map.Entry<Long, Integer> entry : deviceData.inflow.entrySet()) {
                         Long time = entry.getKey();
                         Integer count = entry.getValue();
-                        time = MyUtil.getStartOfInterval(time, startTime, intervalMilli / 1000);
                         aggregateInflow.merge(time, count, Integer::sum);
                     }
                 }
@@ -337,9 +363,28 @@ public class EventsManager {
                     for (Map.Entry<Long, Integer> entry : deviceData.outflow.entrySet()) {
                         Long time = entry.getKey();
                         Integer count = entry.getValue();
-                        time = MyUtil.getStartOfInterval(time, startTime, intervalMilli / 1000);
                         aggregateOutflow.merge(time, count, Integer::sum);
                     }
+                }
+            }
+
+
+            if (isCumulative) {
+                int cumulativeCount = 0;
+                for (Map.Entry<Long, Integer> entry : aggregateInflow.entrySet()) {
+                    long time = entry.getKey();
+                    int count = entry.getValue();
+                    cumulativeCount += count;
+                    aggregateInflow.replace(time, cumulativeCount);
+                }
+            }
+            if (isCumulative) {
+                int cumulativeCount = 0;
+                for (Map.Entry<Long, Integer> entry : aggregateOutflow.entrySet()) {
+                    long time = entry.getKey();
+                    int count = entry.getValue();
+                    cumulativeCount += count;
+                    aggregateOutflow.replace(time, cumulativeCount);
                 }
             }
 
@@ -388,13 +433,13 @@ public class EventsManager {
             return dataset.get(deviceId).getTotalNetflow();
         }
 
-        public CountingDataSet toUniformCountingDataSet(long timeInterval, boolean isCumulative) {
+        public CountingDataSet toUniformCountingDataSet(long start, long timeInterval, boolean isCumulative) {
             CountingDataSet newDataset = new CountingDataSet(eventId, timeInterval, isCumulative);
 
             for (Map.Entry<String, CountingDeviceData> entry : dataset.entrySet()) {
                 String deviceId = entry.getKey();
                 CountingDeviceData data = entry.getValue();
-                newDataset.addRawCountingData(deviceId, data.toUniformCountingDeviceData(timeInterval, isCumulative));
+                newDataset.addRawCountingData(deviceId, data.toUniformCountingDeviceData(start, timeInterval, isCumulative));
             }
             return newDataset;
         }
@@ -498,19 +543,19 @@ public class EventsManager {
             return ret;
         }
 
-        public CountingDeviceData toUniformCountingDeviceData(long timeInterval, boolean isCumulative) {
+        public CountingDeviceData toUniformCountingDeviceData(long start, long timeInterval, boolean isCumulative) {
             CountingDeviceData newData = new CountingDeviceData(
                     deviceId,
                     timeInterval,
                     isCumulative,
-                    toUniformCountingDeviceDataSingle(inflow, timeInterval, isCumulative),
-                    toUniformCountingDeviceDataSingle(outflow, timeInterval, isCumulative)
+                    toUniformCountingDeviceDataSingle(inflow, start, timeInterval, isCumulative),
+                    toUniformCountingDeviceDataSingle(outflow, start, timeInterval, isCumulative)
             );
             return newData;
 
         }
 
-        private TreeMap<Long, Integer> toUniformCountingDeviceDataSingle(TreeMap<Long, Integer> data, long timeInterval, boolean isCumulative) {
+        private TreeMap<Long, Integer> toUniformCountingDeviceDataSingle(TreeMap<Long, Integer> data, long start, long timeInterval, boolean isCumulative) {
             if (data == null) return null;
 
             TreeMap<Long, Integer> newData = new TreeMap<>();
@@ -519,24 +564,22 @@ public class EventsManager {
                 return newData;
             }
 
-            long start = getKey(data, 0);
-
             for (Map.Entry<Long, Integer> entry : data.entrySet()) {
                 long time = entry.getKey();
                 int count = entry.getValue();
 
                 newData.merge(getStartOfInterval(time, start, timeInterval), count, Integer::sum);
             }
-
-            if (isCumulative) {
-                int cumulativeCount = 0;
-                for (Map.Entry<Long, Integer> entry : newData.entrySet()) {
-                    long time = entry.getKey();
-                    int count = entry.getValue();
-                    cumulativeCount += count;
-                    newData.replace(time, cumulativeCount);
-                }
-            }
+//
+//            if (isCumulative) {
+//                int cumulativeCount = 0;
+//                for (Map.Entry<Long, Integer> entry : newData.entrySet()) {
+//                    long time = entry.getKey();
+//                    int count = entry.getValue();
+//                    cumulativeCount += count;
+//                    newData.replace(time, cumulativeCount);
+//                }
+//            }
             return newData;
         }
     }
@@ -754,14 +797,14 @@ public class EventsManager {
         outflow.put(1654361540802L, 0);
 
 
-
-        CountingDeviceData data = new CountingDeviceData("ee", null, null, inflow, outflow);
-
-        CountingDeviceData newData = data.toUniformCountingDeviceData(120, true);
-
-        for (Map.Entry<Long, Integer> i : newData.inflow.entrySet()) {
-            System.out.println(i);
-        }
+//
+//        CountingDeviceData data = new CountingDeviceData("ee", null, null, inflow, outflow);
+//
+////        CountingDeviceData newData = data.toUniformCountingDeviceData(120, true);
+//
+//        for (Map.Entry<Long, Integer> i : newData.inflow.entrySet()) {
+//            System.out.println(i);
+//        }
 
 
 
